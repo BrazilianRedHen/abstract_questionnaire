@@ -238,15 +238,15 @@ ini_set('display_errors', 1);
 						<div class="col-md-4 my-3 englishApptitudeFields">
 							<label>Level of Reading</label>
 							<div class="custom-control custom-radio">
-								<input id="basic" name="readingLevel" type="radio" class="custom-control-input" checked="" required="">
+								<input id="basic" name="englishReadingLevel" type="radio" class="custom-control-input" checked="" required="">
 								<label class="custom-control-label" for="basic">basic</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="intermediate" name="readingLevel" type="radio" class="custom-control-input" required="">
+								<input id="intermediate" name="englishReadingLevel" type="radio" class="custom-control-input" required="">
 								<label class="custom-control-label" for="intermediate">intermediate</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="advanced" name="readingLevel" type="radio" class="custom-control-input" required="">
+								<input id="advanced" name="englishReadingLevel" type="radio" class="custom-control-input" required="">
 								<label class="custom-control-label" for="advanced">advanced</label>
 							</div>
 						</div>
