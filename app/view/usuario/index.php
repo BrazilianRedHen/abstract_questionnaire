@@ -66,30 +66,31 @@ ini_set('display_errors', 1);
 			<div class="container">
 			<div class="row">
 		        <div class="col-md-12 order-md-1">
-		          <form class="needs-validation" novalidate="">
+		          <form class="userRegistration" novalidate="" method="post" action="../postHandler.php">
+		          	<input type="hidden" name="method" value="userRegistration">
 		            <div class="row">
 		              <h4 class="col-md-12 mb-3">Personal Information</h4>
 		              <div class="col-md-6 mb-3">
-		                <label for="firstName">Full Name</label>
-		                <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+		                <label for="firstName">Email</label>
+		                <input type="text" class="form-control" id="email" placeholder="E-mail" value="" required="">
 		                <div class="invalid-feedback">
-		                  Valid first name is required.
+		                  E-mail is required.
 		                </div>
 		              </div>
 
 		              <div class="col-md-4 d-block my-3">
 							<label>Age</label>
 							<div class="custom-control custom-radio">
-								<input id="credit" name="age" type="radio" class="custom-control-input" checked="" required="">
-								<label class="custom-control-label" for="credit">15 - 17</label>
+								<input id="15-17" name="age" type="radio" class="custom-control-input" checked="" required="">
+								<label class="custom-control-label" for="15-17">15 - 17</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="debit" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="debit">18 - 24</label>
+								<input id="18-24" name="age" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="18-24">18 - 24</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="paypal" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="paypal">25 & over</label>
+								<input id="25+" name="age" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="25+">25 & over</label>
 							</div>
 						</div>
 		            </div>
@@ -103,88 +104,95 @@ ini_set('display_errors', 1);
 						<div class="col-md-4 d-block my-3">
 							<label>Academic Level</label>
 							<div class="custom-control custom-radio">
-								<input id="credit" name="age" type="radio" class="custom-control-input" checked="" required="">
-								<label class="custom-control-label" for="credit">High School</label>
+								<input id="highSchool" name="academicLevel" type="radio" class="custom-control-input" checked="" required="">
+								<label class="custom-control-label" for="highSchool">High School</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="debit" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="debit">Graduate</label>
+								<input id="graduate" name="academicLevel" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="graduate">Graduate</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="paypal" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="paypal">Undergraduate</label>
+								<input id="undergraduate" name="academicLevel" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="undergraduate">Undergraduate</label>
 							</div>
 						</div>
 
 						<div class="col-md-4 d-block my-3">
 							<label>Research Branch</label>
 							<div class="custom-control custom-radio">
-								<input id="credit" name="age" type="radio" class="custom-control-input" checked="" required="">
-								<label class="custom-control-label" for="credit">Human Sciences</label>
+								<input id="humanSciences" name="researchBranch" type="radio" class="custom-control-input" checked="" required="">
+								<label class="custom-control-label" for="humanSciences">Human Sciences</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="debit" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="debit">Exact Sciences</label>
+								<input id="exactSciences" name="researchBranch" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="exactSciences">Exact Sciences</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="paypal" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="paypal">Biological Sciences</label>
+								<input id="biologicalSciences" name="researchBranch" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="biologicalSciences">Biological Sciences</label>
 							</div>
 						</div>
 
-						<div class="col-md-4 d-block my-3">
+						<div class="col-md-4 d-block my-3 researchField">
 							<label>Research Field</label>
 							<div class="custom-control custom-radio">
-								<input id="credit" name="age" type="radio" class="custom-control-input" checked="" required="">
-								<label class="custom-control-label" for="credit">Computing</label>
+								<input id="computing" name="researchField" type="radio" class="custom-control-input" checked="" required="">
+								<label class="custom-control-label" for="computing">Computing</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="debit" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="debit">Engineering</label>
+								<input id="engineering" name="researchField" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="engineering">Engineering</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="paypal" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="paypal">Chemistry</label>
+								<input id="chemistry" name="researchField" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="chemistry">Chemistry</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="paypal" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="paypal">Physics</label>
+								<input id="physics" name="researchField" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="physics">Physics</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="paypal" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="paypal">Business</label>
+								<input id="business" name="researchField" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="business">Business</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="paypal" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="paypal">Agronomy</label>
+								<input id="agronomy" name="researchField" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="agronomy">Agronomy</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="paypal" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="paypal">Health</label>
+								<input id="health" name="researchField" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="health">Health</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="paypal" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="paypal">Telecommunication</label>
+								<input id="telecommunication" name="researchField" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="telecommunication">Telecommunication</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="paypal" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="paypal">Linguistics</label>
+								<input id="linguistics" name="researchField" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="linguistics">Linguistics</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="paypal" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="paypal">Other</label>
+								<input id="otherResearchField" name="researchField" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="otherResearchField">Other</label>
+								<div class="hidden otherResearchFieldInput">
+									<input type="text" class="form-control" id="otherResearchFieldInput" placeholder="Input Your custom Research Field">
+					                <div class="invalid-feedback">
+					                  If your Research Field is Other, you must insert your Research Field.
+					                </div>
+								</div>
+				                
 							</div>
 						</div>
 
 						<div class="col-md-4 d-block my-3">
 							<label>What kind of researcher/scientist are you?</label>
 							<div class="custom-control custom-radio">
-								<input id="credit" name="age" type="radio" class="custom-control-input" checked="" required="">
-								<label class="custom-control-label" for="credit">beginner/junior</label>
+								<input id="beginnerJunior" name="scientistType" type="radio" class="custom-control-input" checked="" required="">
+								<label class="custom-control-label" for="beginnerJunior">beginner/junior</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="debit" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="debit">experienced/senior</label>
+								<input id="experiencedSenior" name="scientistType" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="experiencedSenior">experienced/senior</label>
 							</div>
 						</div>
 
@@ -196,68 +204,70 @@ ini_set('display_errors', 1);
 						
 						<h4 class="col-md-12 mb-3">Language Information</h4>
 
-						<div class="col-md-4 d-block my-3">
+						<div class="col-md-4 d-block my-3 nativeLanguage">
 							<label>Native Language</label>
 							<div class="custom-control custom-radio">
-								<input id="credit" name="age" type="radio" class="custom-control-input" checked="" required="">
-								<label class="custom-control-label" for="credit">Portuguese</label>
+								<input id="portuguese" name="nativeLanguage" type="radio" class="custom-control-input" checked="" required="">
+								<label class="custom-control-label" for="portuguese">Portuguese</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="debit" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="debit">English</label>
+								<input id="english" name="nativeLanguage" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="english">English</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="paypal" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="paypal">Spanish</label>
+								<input id="spanish" name="nativeLanguage" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="spanish">Spanish</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="paypal" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="paypal">Italian</label>
+								<input id="italian" name="nativeLanguage" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="italian">Italian</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="paypal" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="paypal">Other</label>
+								<input id="otherLanguage" name="nativeLanguage" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="otherLanguage">Other</label>
+								<div class="hidden otherNativeLanguage">
+					                <input type="text" class="form-control" id="otherNativeLanguage" placeholder="Input Your custom Language">
+					                <div class="invalid-feedback">
+					                  If your Language is Other, you must insert your Language.
+					                </div>
+					            </div>
 							</div>
 							
 						</div>
 
-						<div class="col-md-4 d-block my-3">
+						<div class="col-md-4 my-3 englishApptitudeFields">
 							<label>Level of Reading</label>
 							<div class="custom-control custom-radio">
-								<input id="credit" name="age" type="radio" class="custom-control-input" checked="" required="">
-								<label class="custom-control-label" for="credit">basic</label>
+								<input id="basic" name="readingLevel" type="radio" class="custom-control-input" checked="" required="">
+								<label class="custom-control-label" for="basic">basic</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="debit" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="debit">intermediate</label>
+								<input id="intermediate" name="readingLevel" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="intermediate">intermediate</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="paypal" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="paypal">advanced</label>
+								<input id="advanced" name="readingLevel" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="advanced">advanced</label>
 							</div>
 						</div>
 
-						<div class="col-md-4 d-block my-3">
+						<div class="col-md-4 my-3 englishApptitudeFields">
 							<label>How long have you studied/learned English?</label>
 							<div class="custom-control custom-radio">
-								<input id="debit" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="debit">Less than a year</label>
+								<input id="lessOne" name="englishStudyTime" type="radio" class="custom-control-input" checked="" required="">
+								<label class="custom-control-label" for="lessOne">Less than a year</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="debit" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="debit">1 - 5 years</label>
+								<input id="oneToFive" name="englishStudyTime" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="oneToFive">1 - 5 years</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="credit" name="age" type="radio" class="custom-control-input" checked="" required="">
-								<label class="custom-control-label" for="credit">5 - 10 years</label>
+								<input id="fiveToTen" name="englishStudyTime" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="fiveToTen">5 - 10 years</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="debit" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="debit">longer than 10 years</label>
-							</div>
-							<div class="custom-control custom-radio">
-								<input id="paypal" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="paypal">advanced</label>
+								<input id="moreTen" name="englishStudyTime" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="moreTen">longer than 10 years</label>
 							</div>
 						</div>
 
@@ -267,21 +277,20 @@ ini_set('display_errors', 1);
 		            
 		            <div class="row">
 
-
 						<h4 class="col-md-12 mb-3">Complementary Information</h4>
 
 						<div class="col-md-4 d-block my-3">
 							<label>Why are you participating on this experiment?</label>
 							<div class="custom-control custom-radio">
-								<input id="debit" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="debit">as part of a Laletec program just to contribute to it</label>
+								<input id="laletec" name="participationReason" type="radio" class="custom-control-input" checked="" required="">
+								<label class="custom-control-label" for="laletec">as part of a Laletec program just to contribute to it</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="debit" name="age" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="debit">for learning</label>
+								<input id="learning" name="participationReason" type="radio" class="custom-control-input" required="">
+								<label class="custom-control-label" for="learning">for learning</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="credit" name="age" type="radio" class="custom-control-input" checked="" required="">
+								<input id="credit" name="participationReason" type="radio" class="custom-control-input" required="">
 								<label class="custom-control-label" for="credit">for credit course</label>
 							</div>
 						</div>		            	

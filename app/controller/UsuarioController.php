@@ -7,4 +7,8 @@ require_once 'BaseController.php';
 
 class UsuarioController extends BaseController{
 	
+	public static function salvaUsuario($array_form){
+
+	}
+
 }

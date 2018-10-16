@@ -3,7 +3,7 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-require_once 'dbmysql.php';
+require_once '../config/Database.php';
 
 class BaseController {
 	//LOCAL
