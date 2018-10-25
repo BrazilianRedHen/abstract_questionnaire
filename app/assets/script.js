@@ -1,43 +1,68 @@
 $(function(){ 
 
-	$(".hidden").hide();
+	$('.hidden').hide();
 
-	$(".researchField").on('change', "input[name=researchField]", function() {                
+    $('.academicLevel').on('change', 'input[name=academicLevel]', function() {
+
+        if( $(this).prop('id') == 'otherDegree' ){
+            $('.otherDegreeInput').slideDown();
+            $('#otherDegreeInput').prop('required', true);
+        }else{
+            $('.otherDegreeInput').slideUp();
+            $('#otherDegreeInput').removeAttr('required');
+        }
+
+    });
+
+	$('.researchField').on('change', 'input[name=researchField]', function() {
 		
 		if($(this).prop('id') == 'otherResearchField'){
-			$(".otherResearchFieldInput").slideDown();
-			$("#otherResearchFieldInput").prop("required", true);
+			$('.otherResearchFieldInput').slideDown();
+			$('#otherResearchFieldInput').prop('required', true);
 		}else{
-			$(".otherResearchFieldInput").slideUp();
-			$("#otherResearchFieldInput").removeAttr("required");
+			$('.otherResearchFieldInput').slideUp();
+			$('#otherResearchFieldInput').removeAttr('required');
 		}
 
 	});
 
-	$(".nativeLanguage").on('change', "input[name=nativeLanguage]", function() {                
+	$('.nativeLanguage').on('change', 'input[name=nativeLanguage]', function() {
 		
 		console.log($(this).prop('id'));
 
 		switch($(this).prop('id')){
-			case "otherLanguage":
-				$(".otherNativeLanguage").slideDown();
-				$("#otherNativeLanguage").prop("required", true);
-				$(".englishApptitudeFields").slideDown();
+			case 'otherLanguage':
+				$('.otherNativeLanguage').slideDown();
+				$('#otherNativeLanguage').prop('required', true);
+				$('.englishApptitudeFields').slideDown();
 				break;
-			case "english":
-				$(".otherNativeLanguage").slideUp();
-				$("#otherNativeLanguage").removeAttr("required");
-				$(".englishApptitudeFields").slideUp();
+			case 'english':
+				$('.otherNativeLanguage').slideUp();
+				$('#otherNativeLanguage').removeAttr('required');
+				$('.englishApptitudeFields').slideUp();
 				break;
 			default:
-				$(".otherNativeLanguage").slideUp();
-				$("#otherNativeLanguage").removeAttr("required");
-				$(".englishApptitudeFields").slideDown();
+				$('.otherNativeLanguage').slideUp();
+				$('#otherNativeLanguage').removeAttr('required');
+				$('.englishApptitudeFields').slideDown();
 				break;
 
 		}
 
 	});
+
+    $('.complementaryInformation').on('change', 'input[name=participationReason]', function() {
+
+        if($(this).prop('id') == 'otherComplementaryInformation'){
+            $('.otherComplementaryInformation').slideToggle();
+            if($('#otherComplementaryInformation:checkbox:checked').length > 0){
+                $('#otherComplementaryInformation').prop('required', true);
+			}else{
+                $('#otherComplementaryInformation').removeAttr('required');
+			}
+
+        }
+    });
 
 
 });

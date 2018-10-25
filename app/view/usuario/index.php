@@ -101,20 +101,31 @@ ini_set('display_errors', 1);
 
 						<h4 class="col-md-12 mb-3">Academic Information</h4>
 
-						<div class="col-md-4 d-block my-3">
+						<div class="col-md-4 d-block my-3 academicLevel">
 							<label>Academic Level</label>
 							<div class="custom-control custom-radio">
 								<input id="highSchool" name="academicLevel" type="radio" class="custom-control-input" checked="" required="">
 								<label class="custom-control-label" for="highSchool">High School</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input id="graduate" name="academicLevel" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="graduate">Graduate</label>
-							</div>
-							<div class="custom-control custom-radio">
 								<input id="undergraduate" name="academicLevel" type="radio" class="custom-control-input" required="">
 								<label class="custom-control-label" for="undergraduate">Undergraduate</label>
 							</div>
+                            <div class="custom-control custom-radio">
+                                <input id="graduate" name="academicLevel" type="radio" class="custom-control-input" required="">
+                                <label class="custom-control-label" for="graduate">Graduate</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input id="otherDegree" name="academicLevel" type="radio" class="custom-control-input" required="">
+                                <label class="custom-control-label" for="otherDegree">Other</label>
+                                <div class="hidden otherDegreeInput">
+                                    <input type="text" class="form-control" id="otherDegreeInput" placeholder="Input Your custom Degree">
+                                    <div class="invalid-feedback">
+                                        If you have a different degree you must put it in.
+                                    </div>
+                                </div>
+
+                            </div>
 						</div>
 
 						<div class="col-md-4 d-block my-3">
@@ -279,20 +290,30 @@ ini_set('display_errors', 1);
 
 						<h4 class="col-md-12 mb-3">Complementary Information</h4>
 
-						<div class="col-md-4 d-block my-3">
+						<div class="col-md-4 d-block my-3 complementaryInformation">
 							<label>Why are you participating on this experiment?</label>
-							<div class="custom-control custom-radio">
-								<input id="laletec" name="participationReason" type="radio" class="custom-control-input" checked="" required="">
-								<label class="custom-control-label" for="laletec">as part of a Laletec program just to contribute to it</label>
+							<div class="form-check">
+								<input id="laletec" name="participationReason" type="checkbox" class="form-check-input" checked="" required="">
+								<label class="form-check-label" for="laletec">as part of a Laletec program just to contribute to it</label>
 							</div>
-							<div class="custom-control custom-radio">
-								<input id="learning" name="participationReason" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="learning">for learning</label>
+							<div class="form-check">
+								<input id="learning" name="participationReason" type="checkbox" class="form-check-input" required="">
+								<label class="form-check-label" for="learning">for learning</label>
 							</div>
-							<div class="custom-control custom-radio">
-								<input id="credit" name="participationReason" type="radio" class="custom-control-input" required="">
-								<label class="custom-control-label" for="credit">for credit course</label>
+							<div class="form-check">
+								<input id="credit" name="participationReason" type="checkbox" class="form-check-input" required="">
+								<label class="form-check-label" for="credit">for credit course</label>
 							</div>
+                            <div class="form-check">
+                                <input id="otherComplementaryInformation" name="participationReason" type="checkbox" class="form-check-input" required="">
+                                <label class="form-check-label" for="otherComplementaryInformation">other</label>
+                                <div class="hidden otherComplementaryInformation">
+                                    <input type="text" class="form-control" id="otherComplementaryInformation" placeholder="Input Your custom Reason">
+                                    <div class="invalid-feedback">
+                                        If your have other reason, you must insert your Reason.
+                                    </div>
+                                </div>
+                            </div>
 						</div>		            	
 		            </div>				
 
